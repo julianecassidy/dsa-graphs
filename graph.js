@@ -55,7 +55,7 @@ class Graph {
   /** traverse graph with DFS and returns array of Node values */
   depthFirstSearch(start, seen=new Set([start])) {
     const adj = new Array();
-    
+
     for (let node of start.adjacent) {
       if (!seen.has(node)) {
         seen.add(node);
@@ -63,26 +63,13 @@ class Graph {
       }
     }
 
-    console.log("start value", start.value);
-    if (adj.size === 0) return start.value;
-    
-    return [start.val].concat(
-      adj.map(node => this.depthFirstSearch(node, seen))
-    );
-    // for (let node of adj) {
-    //   const newVal = (this.depthFirstSearch(node, seen, searchResults))
-    //   searchResults.push(newVal);
-    // }
+    if (adj.length === 0) return start.value;
 
-    // console.log("search results", searchResults);
-    // return searchResults;
-    // array of node values
-    // adjacency set
-    // base case: adjacency set is empty, return val
+    let results = ''
 
-    // iterate through current el and add its adj nodes to the set
-    // iterate through the set
-    // push the recursive call result into the array
+    adj.map(node => results += this.depthFirstSearch(node, seen))
+
+    return start.value += results;
    }
 
   /** traverse graph with BDS and returns array of Node values */

@@ -1,143 +1,143 @@
 const { Graph, Node } = require("./graph");
 
-// describe("addVertex", function () {
-//   it("should add a key in the adjacency", function () {
-//     // build (unconnected) graph
-//     //
-//     //            A
-//     //
-//     //      B
-//     //                  C
-//     //
+describe("addVertex", function () {
+  it("should add a key in the adjacency", function () {
+    // build (unconnected) graph
+    //
+    //            A
+    //
+    //      B
+    //                  C
+    //
 
-//     let graph = new Graph();
-//     let a = new Node("A");
-//     let b = new Node("B");
-//     let c = new Node("C");
-//     expect(graph.nodes.has(a)).toBe(false);
-//     expect(graph.nodes.has(b)).toBe(false);
-//     expect(graph.nodes.has(c)).toBe(false);
-//     graph.addVertex(a);
-//     graph.addVertex(b);
-//     graph.addVertex(c);
-//     expect(graph.nodes.has(a)).toBe(true);
-//     expect(graph.nodes.has(b)).toBe(true);
-//     expect(graph.nodes.has(c)).toBe(true);
-//   });
-// });
+    let graph = new Graph();
+    let a = new Node("A");
+    let b = new Node("B");
+    let c = new Node("C");
+    expect(graph.nodes.has(a)).toBe(false);
+    expect(graph.nodes.has(b)).toBe(false);
+    expect(graph.nodes.has(c)).toBe(false);
+    graph.addVertex(a);
+    graph.addVertex(b);
+    graph.addVertex(c);
+    expect(graph.nodes.has(a)).toBe(true);
+    expect(graph.nodes.has(b)).toBe(true);
+    expect(graph.nodes.has(c)).toBe(true);
+  });
+});
 
-// describe("addVertices", function () {
-//   it("should add multiple keys in the adjacency", function () {
-//     // build (unconnected) graph
-//     //
-//     //            A
-//     //
-//     //      B
-//     //                  C
-//     //
+describe("addVertices", function () {
+  it("should add multiple keys in the adjacency", function () {
+    // build (unconnected) graph
+    //
+    //            A
+    //
+    //      B
+    //                  C
+    //
 
-//     let graph = new Graph();
-//     let a = new Node("A");
-//     let b = new Node("B");
-//     let c = new Node("C");
-//     expect(graph.nodes.has(a)).toBe(false);
-//     expect(graph.nodes.has(b)).toBe(false);
-//     expect(graph.nodes.has(c)).toBe(false);
-//     graph.addVertices([a, b, c]);
-//     expect(graph.nodes.has(a)).toBe(true);
-//     expect(graph.nodes.has(b)).toBe(true);
-//     expect(graph.nodes.has(c)).toBe(true);
-//   });
-// });
+    let graph = new Graph();
+    let a = new Node("A");
+    let b = new Node("B");
+    let c = new Node("C");
+    expect(graph.nodes.has(a)).toBe(false);
+    expect(graph.nodes.has(b)).toBe(false);
+    expect(graph.nodes.has(c)).toBe(false);
+    graph.addVertices([a, b, c]);
+    expect(graph.nodes.has(a)).toBe(true);
+    expect(graph.nodes.has(b)).toBe(true);
+    expect(graph.nodes.has(c)).toBe(true);
+  });
+});
 
-// describe("addEdge", function () {
-//   it("should add the appropriate edges to the adjacency list", function () {
-//     // build graph
-//     //
-//     //              A
-//     //            /   \
-//     //          B       C
-//     //            \   /
-//     //              D
-//     //
-//     let graph = new Graph();
-//     let a = new Node("A");
-//     let b = new Node("B");
-//     let c = new Node("C");
-//     let d = new Node("D");
-//     graph.addVertices([a, b, c, d]);
-//     graph.addEdge(a, b);
-//     graph.addEdge(a, c);
-//     graph.addEdge(b, d);
-//     graph.addEdge(c, d);
-//     expect(a.adjacent).toContain(b, c);
-//     expect(b.adjacent).toContain(a, d);
-//     expect(c.adjacent).toContain(a, d);
-//     expect(d.adjacent).toContain(b, c);
-//   });
-// });
+describe("addEdge", function () {
+  it("should add the appropriate edges to the adjacency list", function () {
+    // build graph
+    //
+    //              A
+    //            /   \
+    //          B       C
+    //            \   /
+    //              D
+    //
+    let graph = new Graph();
+    let a = new Node("A");
+    let b = new Node("B");
+    let c = new Node("C");
+    let d = new Node("D");
+    graph.addVertices([a, b, c, d]);
+    graph.addEdge(a, b);
+    graph.addEdge(a, c);
+    graph.addEdge(b, d);
+    graph.addEdge(c, d);
+    expect(a.adjacent).toContain(b, c);
+    expect(b.adjacent).toContain(a, d);
+    expect(c.adjacent).toContain(a, d);
+    expect(d.adjacent).toContain(b, c);
+  });
+});
 
-// describe("removeEdge", function () {
-//   it("should remove the vertices from the adjacency list", function () {
-//     // build graph
-//     //
-//     //              A
-//     //            /   \
-//     //          B       C
-//     //            \   /
-//     //              D
-//     //
+describe("removeEdge", function () {
+  it("should remove the vertices from the adjacency list", function () {
+    // build graph
+    //
+    //              A
+    //            /   \
+    //          B       C
+    //            \   /
+    //              D
+    //
 
-//     let graph = new Graph();
-//     let a = new Node("A");
-//     let b = new Node("B");
-//     let c = new Node("C");
-//     let d = new Node("D");
-//     graph.addVertices([a, b, c, d]);
-//     graph.addEdge(a, b);
-//     graph.addEdge(a, c);
-//     graph.addEdge(b, d);
-//     graph.addEdge(c, d);
+    let graph = new Graph();
+    let a = new Node("A");
+    let b = new Node("B");
+    let c = new Node("C");
+    let d = new Node("D");
+    graph.addVertices([a, b, c, d]);
+    graph.addEdge(a, b);
+    graph.addEdge(a, c);
+    graph.addEdge(b, d);
+    graph.addEdge(c, d);
 
-//     graph.removeEdge(b, a);
-//     graph.removeEdge(c, d);
+    graph.removeEdge(b, a);
+    graph.removeEdge(c, d);
 
-//     expect(a.adjacent).not.toContain(b);
-//     expect(c.adjacent).not.toContain(d);
-//   });
-// });
+    expect(a.adjacent).not.toContain(b);
+    expect(c.adjacent).not.toContain(d);
+  });
+});
 
-// describe("removeVertex", function () {
-//   it("should remove the vertex as well as any edges", function () {
-//     // build graph
-//     //
-//     //              A
-//     //            /   \
-//     //          B       C
-//     //            \   /
-//     //              D
-//     //
+describe("removeVertex", function () {
+  it("should remove the vertex as well as any edges", function () {
+    // build graph
+    //
+    //              A
+    //            /   \
+    //          B       C
+    //            \   /
+    //              D
+    //
 
-//     let graph = new Graph();
-//     let a = new Node("A");
-//     let b = new Node("B");
-//     let c = new Node("C");
-//     let d = new Node("D");
-//     graph.addVertices([a, b, c, d]);
-//     graph.addEdge(a, b);
-//     graph.addEdge(a, c);
-//     graph.addEdge(b, d);
-//     graph.addEdge(c, d);
+    let graph = new Graph();
+    let a = new Node("A");
+    let b = new Node("B");
+    let c = new Node("C");
+    let d = new Node("D");
+    graph.addVertices([a, b, c, d]);
+    graph.addEdge(a, b);
+    graph.addEdge(a, c);
+    graph.addEdge(b, d);
+    graph.addEdge(c, d);
 
-//     graph.removeVertex(c);
-//     graph.removeVertex(d);
+    graph.removeVertex(c);
+    graph.removeVertex(d);
 
-//     expect(graph.nodes.has(a)).toBeTruthy();
-//     expect(graph.nodes.has(b)).toBeTruthy();
-//     expect(graph.nodes.has(c)).toBeFalsy();
-//     expect(graph.nodes.has(d)).toBeFalsy();
-//   });
-// });
+    expect(graph.nodes.has(a)).toBeTruthy();
+    expect(graph.nodes.has(b)).toBeTruthy();
+    expect(graph.nodes.has(c)).toBeFalsy();
+    expect(graph.nodes.has(d)).toBeFalsy();
+  });
+});
 
 describe("DFS", function () {
   it("return an array of the nodes searched using DFS", function () {
@@ -191,6 +191,7 @@ describe("DFS", function () {
 
     let result = graph.depthFirstSearch(T);
 
+    console.log("result", result);
     expect.assertions(2);
 
     if (result[1] === "R") {
